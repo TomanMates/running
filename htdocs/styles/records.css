@@ -1,0 +1,255 @@
+/* Reset základních stylů */
+body, h1, h2, h3, ul, li, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* Hlavní nadpis */
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Bílý text pro lepší čitelnost */
+}
+
+h3 {
+    text-align: center;
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Navigace */
+nav ul {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+nav ul li {
+    margin: 0 10px;
+    color: #fff;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Bílá barva odkazu */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hlavní záhlaví */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Tmavé pozadí pro lepší čitelnost */
+    color: white;
+    text-align: center;
+    padding: 2px 0; /* Zmenšený padding */
+    font-size: 14px; /* Menší velikost písma */
+    z-index: 20;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-header.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Úvodní obrazovka */
+.intro-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0056b3; /* Tmavší modré pozadí */
+    color: white;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.intro-screen h1 {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stín pro lepší čitelnost */
+}
+
+.intro-screen p {
+    font-size: 20px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.intro-screen.fade-out {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Obrázek na pozadí */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 5;
+}
+
+.background-image.hidden {
+    opacity: 0;
+}
+
+.background-image:not(.hidden) {
+    opacity: 1;
+}
+
+/* Kontejner pro rekordy */
+.records-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: transparent; /* Odstranění bílého pozadí */
+    z-index: 15; /* Vyšší z-index než obrázek */
+    position: relative;
+}
+
+/* Modrý box pod h2 */
+.records-container h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #fff; /* Bílý text */
+    background-color: #003366; /* Tmavě modrý box */
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl pro sekce mužů a žen */
+.records-men, .records-women {
+    flex: 1;
+    padding: 20px;
+    color: #fff; /* Bílý text */
+    margin-top: 50px; /* Posunutí sekcí níže */
+}
+
+.records-men h2, .records-women h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.records-men h3, .records-women h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Styl pro seznam rekordů */
+.records-men ul, .records-women ul {
+    list-style: none;
+    padding: 0;
+}
+
+.records-men li, .records-women li {
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #fff;
+}
+
+/* Textový box */
+.text-box {
+    background-color: rgba(0, 0, 123, 0.8); /* Tmavší modré pozadí */
+    color: #fff; /* Bílý text */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.text-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-box ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Tlačítko pro posun nahoru */
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 30;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-up:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-up.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-up:not(.hidden) {
+    opacity: 1;
+}
+
+/* Responsivní design */
+@media (max-width: 768px) {
+    .records-container {
+        flex-direction: column;
+    }
+
+    .records-men, .records-women {
+        flex: none;
+        width: 100%;
+    }
+}
